@@ -10,8 +10,8 @@ const initialState = {
     error: null
 }
 
-export const fetchPosts = createAsyncThunk('posts/fetchPosts', async (initialPost) => {
-    const response = await axios.post(POSTS_URL, initialPost)
+export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
+    const response = await axios.get(POSTS_URL)
     return response.data
 })
 
